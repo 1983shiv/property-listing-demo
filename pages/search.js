@@ -9,7 +9,7 @@ import SearchFilters from '../components/SearchFilters';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/images/noresult.svg'
 
-const Search = ({ properties }) => {
+const Search = ({ properties}) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
@@ -63,7 +63,7 @@ export async function getServerSideProps({ query }) {
 
   return {
     props: {
-      properties: data?.hits,
+      properties: data?.hits || [],
     },
   };
 }
